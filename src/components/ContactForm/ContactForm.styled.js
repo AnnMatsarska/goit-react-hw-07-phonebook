@@ -24,8 +24,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   display: block;
   margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+
   padding: 6px 8px;
   cursor: pointer;
   font-weight: 700;
