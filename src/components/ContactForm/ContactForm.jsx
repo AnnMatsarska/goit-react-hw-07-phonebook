@@ -1,8 +1,12 @@
 import { Button, Form, Input, Label } from './ContactForm.styled';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { notifications } from 'services/notifications';
+
 import { getContacts } from 'redux/selectors';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -36,16 +40,16 @@ export const ContactForm = () => {
     evt.preventDefault();
 
     if (hasNameDuplicate(name)) {
-      alert(` ${name} is already in contacts`);
+      toast.info(` ${name} is already in contacts`, notifications);
       return;
     }
 
     if (hasNamberDuplicate(number)) {
-      alert(` Number ${number} is already in contacts`);
+      toast.info(` Number ${number} is already in contacts`, notifications);
       return;
     }
 
-    dispatch(addContact(name, number));
+    dispatch(addContact({ name, number }));
 
     setName('');
     setNumber('');
