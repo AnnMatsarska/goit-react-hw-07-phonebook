@@ -9,7 +9,7 @@ export const Item = styled.li`
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  width: 300px;
+  width: 320px;
   height: 30px;
   font-size: 15px;
 `;
