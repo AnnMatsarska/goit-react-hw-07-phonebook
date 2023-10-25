@@ -1,18 +1,21 @@
-import { ThreeDots } from 'react-loader-spinner';
+import { Oval } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
-    <ThreeDots
-      height="80"
-      width="80"
-      radius="9"
-      color="#3f51b5"
-      ariaLabel="three-dots-loading"
+    <Oval
+      height={50}
+      width={50}
+      color="rgb(237, 95, 48)"
       wrapperStyle={{
+        marginTop: '30px',
         justifyContent: 'center',
       }}
-      wrapperClassName=""
+      wrapperClass=""
       visible={true}
+      ariaLabel="oval-loading"
+      secondaryColor="rgb(237, 95, 48)"
+      strokeWidth={2}
+      strokeWidthSecondary={2}
     />
   );
 };
