@@ -9,16 +9,16 @@ import { Filter } from './Filter/Filter';
 import { Section } from './Section/Section';
 import { Loader } from './Loader/Loader';
 
-import { getContacts, getError, getIsLoading } from 'redux/selectors';
+import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 
 import { Container } from './Container.styled';
 import { notifications } from 'services/notifications';
 
 export const App = () => {
-  const contacts = useSelector(getContacts);
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   const dispatch = useDispatch();
 

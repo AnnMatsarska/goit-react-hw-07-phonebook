@@ -5,14 +5,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { notifications } from 'services/notifications';
 
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const hasNameDuplicate = name => {
